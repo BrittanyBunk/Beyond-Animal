@@ -4,7 +4,7 @@
 # usage: just run it (jri)
 
 # list of stock tickers (should get these from a csv file though)
-tickers=(HTG.L" "AMPE" "TSN" "BYND" "VRYYF" "EATS.CN")
+tickers=("HTG.L" "AMPE" "TSN" "BYND" "VRYYF" "EATS.CN")
 
 # list of yes keywords
 yy="vegan|plant-based|cruelty-free|dairy-free|egg-free"
