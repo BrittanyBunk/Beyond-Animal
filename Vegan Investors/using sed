@@ -1,0 +1,13 @@
+I created a file called hi.txt. In it I wrote: mary had a little lamb. This is what it looks like when I use sed:
+
+remove before text:
+sed 's/.*had//' hi.txt
+ a little lamb
+
+remove after text:
+sed 's/little.*//' hi.txt
+mary had a
+
+remove both before and after text:
+ sed 's/.*had//; s/little.*//' hi.txt
+ a
