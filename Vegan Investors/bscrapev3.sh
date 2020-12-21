@@ -17,7 +17,6 @@ yy="vegan|plant-based|cruelty-free|dairy-free|egg-free"
 template="https://finance.yahoo.com/quote/"
 
 for ticker in ${tickers[@]}; do
-    echo $ticker
     url=$template$ticker"/profile"
     isthere=`curl -s $url | sed -e "s/Description(.*)Corporate Governance/\0/" | grep -ciE $yy`
     if [ $isthere -gt 0 ]
