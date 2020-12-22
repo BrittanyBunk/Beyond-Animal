@@ -22,3 +22,6 @@ won't take " as quotes either (around the same text):
 sed -e 's/.*a//; s/"little l".*//' hi.txt
 sed: can't read hi.txt: No such file or directory
 
+only / works in sed for reading url's. : doesn't work:
+curl "https://finance.yahoo.com/quote/SPLK/profile" | sed -i -e "s:corporate .*::g" | grep -ic dairy
+curl: (23) Failed writing body (866 != 1300)
