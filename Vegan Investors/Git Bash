@@ -9,3 +9,6 @@ elif grep "tv|channels|movies|weapons|video|games" https://finance.yahoo.com/quo
 elif grep "gold|groundwater|golf|plastic" https://finance.yahoo.com/quote/[A-ZZZZZ]/profile; then cat [*] > env.txt;
 elif grep "crude|oil|natural gas|upstream|midstream|downstream|gasoline|propane|diesel|petrol|petroleum|ethylene|coal" https://finance.yahoo.com/quote/[A-ZZZZZ]/profile; then cat [*] > oil.txt;
 else cat [*] > vegan.txt; fi
+
+Working:
+curl "https://finance.yahoo.com/quote/SPLK/profile" | sed 's/[Description</span></h2><p class="Mt(15px) Lh(1.6)" data-reactid=].*//' | grep -ic dairy
