@@ -27,3 +27,7 @@ sed: can't read hi.txt: No such file or directory
 only / works in sed for reading url's. : doesn't work (because it's trying to rewrite a file it doesn't have - url's can't be changed):
 curl "https://finance.yahoo.com/quote/SPLK/profile" | sed -i -e "s:corporate .*::g" | grep -ic dairy
 curl: (23) Failed writing body (866 != 1300)
+
+Using \ alone doesn't work:
+curl "https://finance.yahoo.com/quote/SPLK/profile" | sed 's/corporate\-g.*//' | grep -ic dairy
+1 <- should be 0
