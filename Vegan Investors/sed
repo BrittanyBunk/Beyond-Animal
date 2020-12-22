@@ -1,4 +1,6 @@
-Sed isn't able to work with url's. Url's need to be curl'd and then piped to be able to do so, like: curl "website" | sed (part to cut) | grep term
+Notes:
+* Sed isn't able to work with url's. Url's need to be curl'd and then piped to be able to do so, like: curl "website" | sed (part to cut) | grep term
+* Using a : will rewrite a file, while / will print it out on the screen.
 
 I created a file called hi.txt. In it I wrote: mary had a little lamb. This is what it looks like when I use sed:
 
@@ -22,6 +24,6 @@ won't take " as quotes either (around the same text):
 sed -e 's/.*a//; s/"little l".*//' hi.txt
 sed: can't read hi.txt: No such file or directory
 
-only / works in sed for reading url's. : doesn't work:
+only / works in sed for reading url's. : doesn't work (because it's trying to rewrite a file it doesn't have - url's can't be changed):
 curl "https://finance.yahoo.com/quote/SPLK/profile" | sed -i -e "s:corporate .*::g" | grep -ic dairy
 curl: (23) Failed writing body (866 != 1300)
