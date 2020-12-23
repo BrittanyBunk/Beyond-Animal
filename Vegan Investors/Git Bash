@@ -13,5 +13,5 @@ else cat [*] > vegan.txt; fi
 Working:
 curl "https://finance.yahoo.com/quote/SPLK/profile" | sed 's/[Description</span></h2><p class="Mt(15px) Lh(1.6)" data-reactid=].*//' | grep -ic dairy
 
-curl "https://finance.yahoo.com/quote/SPLK/profile" | sed 's/.*[Description<].*//; s/corporate-.*//' | grep -ic dairy
+curl "https://finance.yahoo.com/quote/SPLK/profile" | sed 's/.*[Description<].*//; s/[corporate-].*//' | grep -ic dairy
 
