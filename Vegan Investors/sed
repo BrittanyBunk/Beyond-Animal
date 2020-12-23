@@ -1,0 +1,50 @@
+Notes:
+* Sed isn't able to work with url's. Url's need to be curl'd and then piped to be able to do so, 
+* like: curl "website" | sed (part to cut) | grep term
+* Using a : will rewrite a file, while / will print it out on the screen.
+
+I created a file called hi.txt. In it I wrote: mary had a little lamb. This is what it looks like when I use sed:
+
+remove before text:
+sed 's/.*had//' hi.txt
+ a little lamb
+
+remove after text:
+sed 's/little.*//' hi.txt
+mary had a
+
+remove both before and after text:
+ sed 's/.*had//; s/little.*//' hi.txt
+ a
+
+won't take ' for quotes (put them around little l):
+sed -e 's/.*a//; s/'little l'.*//' hi.txt
+sed: -e expression #1, char 17: unterminated `s' command
+
+won't take " as quotes either (around the same text):
+sed -e 's/.*a//; s/"little l".*//' hi.txt
+sed: can't read hi.txt: No such file or directory
+
+only / works in sed for reading url's. : doesn't work (because it's trying to rewrite a file it doesn't have - url's can't be changed):
+curl "https://finance.yahoo.com/quote/SPLK/profile" | sed -i -e "s:corporate .*::g" | grep -ic dairy
+curl: (23) Failed writing body (866 != 1300)
+
+Using \ alone doesn't work:
+curl "https://finance.yahoo.com/quote/SPLK/profile" | sed 's/corporate\-g.*//' | grep -ic dairy
+1 <- should be 0
+
+Brackets cause issues, but the .* is too (for this one, I wrote in hi.txt mary had a.* little lamb):
+sed 's/.*[a.* ]//' hi.txt
+mb <- should be little lamb
+
+$ sed 's/.*[a]//' hi.txt
+mb <- should be .* little lamb
+
+$ sed 's/.*a//' hi.txt
+mb <- should be .* little lamb
+
+$ sed 's/a.*//' hi.txt
+m <- ok, this one's fine
+
+$ sed 's/[a.*].*//' hi.txt
+m <- should be mary had 
