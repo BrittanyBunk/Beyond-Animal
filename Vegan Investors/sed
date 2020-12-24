@@ -1,6 +1,7 @@
 Notes:
 * Sed isn't able to work with url's. Url's need to be curl'd and then piped to be able to do so, like: curl "website" | sed (part to cut) | grep term
 * Using a : will rewrite a file, while / will print it out on the screen.
+* curl doesn't work without -n with sed
 
 I created a file called hi.txt. In it I wrote: mary had a little lamb. This is what it looks like when I use sed:
 
