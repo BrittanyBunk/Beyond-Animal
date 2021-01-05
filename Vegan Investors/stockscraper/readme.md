@@ -2,9 +2,9 @@ howto use the tsv files
 
 the organization is under the following columns:
 Symbol - ticker
-Company - name of issuing company
-yay - total count of yay keyword appearences in Desc (see yay.txt file)
-nay - total count of nay keyword appearences in Desc (see nay.txt file)
+Company - name of issuing company:
+- yay - total count of yay keyword appearences in Desc (see yay.txt file)
+- nay - total count of nay keyword appearences in Desc (see nay.txt file)
 Desc - description pulled from finance.yahoo.com
 
 the rows are sorted by yay column as per brittany's suggestion that we prioritize by yay keywords such as plant-based and cruelty-free.
