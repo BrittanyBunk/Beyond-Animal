@@ -21,6 +21,7 @@ golf
 pool
 swim
 swimming
+lawn
 lead
 
 ------
@@ -36,7 +37,7 @@ lead
 *cotton production amages the environment
 *charcoal is associated with slahs and burn agriculture, which hurts forests: https://theconversation.com/madagascars-unique-spiny-forest-is-fast-being-turned-into-charcoal-58323
 *palm oil is bad for orangutans
-*heavy water use that wildlife needs: golf, pool, swim, swimming
+*heavy water use that wildlife needs: golf, pool, swim, swimming, lawn
 *lead is bad for the environment
 ---
 it's important to factor in humans for vegan products, as people are animals too.
