@@ -25,9 +25,9 @@ lawn
 lead
 biopharmaceutical
 biopharmaceuticals
-tanning
 life science
 biotechnology
+video games
 
 ------
 *almonds use 1/2 of all farmed bees to pollinate
@@ -45,5 +45,6 @@ biotechnology
 *heavy water use that wildlife needs: golf, pool, swim, swimming, lawn
 *lead is bad for the environment - as in wildlife
 *biological science - can involve plants or animals
+*only some video games involve violence against people and animals
 ---
 it's important to factor in humans for vegan products, as people are animals too.
