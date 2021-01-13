@@ -1,1 +1,52 @@
-alcohol, almond, almonds, avocados, bananas, biopharmaceutical, biopharmaceuticals, biotechnology, black pepper, cane sugar, cashews, charcoal, chocolate, coconut, coffee, coffees, cotton, golf, lawn, lead, life science, palm oil, peppercorn, pool, quinoa, salt, swim, swimming, tea, nicotine, tobacco, truffles, vanilla, video games, wine, US, Australia, Israel, Brazil, Switzerland, Germany, United States, technology, utilities, fuel, energy, wheat, corn, soy, mining, agriculture, real estate
+agriculture
+alcohol
+almond
+almonds
+Australia
+avocados
+bananas
+biopharmaceutical
+biopharmaceuticals
+biotechnology
+black pepper
+Brazil
+cane sugar
+cashews
+charcoal
+chocolate
+coconut
+coffee
+coffees
+corn
+cotton
+energy
+fuel
+Germany
+golf
+Israel
+lawn
+lead
+life science
+mining
+nicotine
+palm oil
+peppercorn
+pool
+quinoa
+real estate
+salt
+soy
+swim
+swimming
+Switzerland
+tea
+technology
+tobacco
+truffles
+United States
+US
+utilities
+vanilla
+video games
+wheat
+wine
