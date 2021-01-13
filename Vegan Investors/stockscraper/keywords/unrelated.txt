@@ -1,1 +1,6 @@
-casinos, bars
+nay:
+casinos, bars, wells fargo
+
+may: 
+loans, debt, mortgage, fund, bonds, credit, trust
+
