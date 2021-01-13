@@ -1,1 +1,59 @@
-aeroponic, aerospace, alternative, clean, crop, cruelty-free, cruelty free, dairy-free, dairy free, dairy-substitute, dairy substitute, egg-free, egg free, eggless, faux, fauxfur, faux fur, fruit, green, health, healthy, hydroponic, meatless, meat substitute, mushroom, natural, nut, organic, plant, plant-based, plant based, pleather, leather-free, produce, recycling, renewable, rice, seed, solar, vegan, vegetarian, veggie, vertical, water, wind, zero-emission, zero-waste, carbon capture, hydroelectric, hydro, Canada, India, UK, Jamaica, United Kingdom, Oregon, fitness, wellness, reclamation
+aeroponic
+aerospace
+alternative
+Canada
+carbon capture
+clean
+crop
+cruelty free
+cruelty-free
+dairy free
+dairy substitute
+dairy-free
+dairy-substitute
+egg free
+egg-free
+eggless
+faux
+faux fur
+fauxfur
+fitness
+fruit
+green
+health
+healthy
+hydro
+hydroelectric
+hydroponic
+India
+Jamaica
+leather-free
+meat substitute
+meatless
+mushroom
+natural
+nut
+Oregon
+organic
+plant
+plant based
+plant-based
+pleather
+produce
+reclamation
+recycling
+renewable
+rice
+seed
+solar
+UK
+United Kingdom
+vegan
+vegetarian
+veggie
+vertical
+water
+wellness
+wind
+zero-emission
+zero-waste
