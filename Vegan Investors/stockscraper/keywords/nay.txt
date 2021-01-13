@@ -1,1 +1,80 @@
-animal, aquamin, bait, bottled water, cats, channels, China, cigarette, cigarettes, coal, cooking, dairy, diesel, disposable, dogs, downstream, drilling, drugs, egg, ethylene, fish, fisheries, fishes, fishing, gas station, gasoline, gold, grocery, groundwater, honey, horse, hunting, hydrogen, hydraulic fracturing, insecticide, leather, life science, limestone, livestock, mall, marble, meat, meats, midstream, milk, mouse, movies, natural gas, offshore, oil, pest, pest control, pesticide, petrol, pipeline, petroleum, pets, pfizer, pharmaceutical, pharmaceuticals, pharmacy, plastic, poultry, pre-clinical, propane, rabbit, restaurant, testing, turbine, tv, upstream, weapons, wool, aircraft, European Union, trucking, oilfield, truck, cancer, exhaust, kitty
+animal
+aquamin
+bait
+bottled water
+cancer
+cats
+channels
+China
+cigarette
+cigarettes
+coal
+cooking
+dairy
+diesel
+disposable
+dogs
+downstream
+drilling
+drugs
+egg
+ethylene
+European Union
+exhaust
+fish
+fisheries
+fishes
+fishing
+gas station
+gasoline
+gold
+grocery
+groundwater
+honey
+horse
+hunting
+hydraulic fracturing
+hydrogen
+insecticide
+kitty
+leather
+life science
+limestone
+livestock
+mall
+marble
+meat
+meats
+midstream
+milk
+mouse
+movies
+natural gas
+offshore
+oil
+oilfield
+pest
+pest control
+pesticide
+petrol
+petroleum
+pets
+pfizer
+pharmaceutical
+pharmaceuticals
+pharmacy
+pipeline
+plastic
+poultry
+pre-clinical
+propane
+rabbit
+restaurant
+testing
+truck
+trucking
+turbine
+tv
+upstream
+weapons
+wool
