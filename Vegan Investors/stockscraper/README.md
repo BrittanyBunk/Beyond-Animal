@@ -6,10 +6,16 @@ finance.yahoo profile descriptions are searched for keywords contained in yay, n
 
 the data is sorted by the yay column, so as to give priority to yay items regardless of nay|may counts.
 
+the yay, nay, may keywords are highlighted within the descriptions for context.
+
 ## notes
+
 **503**
 a major problem was dealing with 503 error stemming from finance.yahoo not responding to request by enlive's html-resource. thx to sean cornfield, the ubiquitous clojure guru, we learned how to stacktrace and discovered that the problem stemmed from html-resource not doing any error checking at all. therefore, the fetch-url program was re-written with a loop utilizing html-snippet and the slurper (which slurps continuously regardless of what is returned).
 
+**links**
+exchange lists from http://eoddata.com/
+stock descriptions from https://finance.yahoo.com/
 
 ## Usage
 

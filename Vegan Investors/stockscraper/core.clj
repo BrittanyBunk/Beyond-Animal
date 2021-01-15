@@ -48,7 +48,7 @@ stockscraper is used to identify vegan stocks on various exchanges.
   (str "https://finance.yahoo.com/quote/" sym "/profile"))
 
 (defn slurper
-  "keeps on slurping"
+  "keeps on slurping bypassing 503 error"
   [url]
   (try
     (slurp url)
@@ -147,6 +147,12 @@ stockscraper is used to identify vegan stocks on various exchanges.
    (ds/select-columns ds [:symbol :company :yayk :nayk :mayk :yay :nay :may :desc])
    filname))
 
+(defn clean-up
+  "removes missing rows from dataset"
+  [ds]
+  (ds/remove-rows
+   ds
+   (ds/missing ds)))
 
 (defn ds-final
   "creates dataset for an exchange"
@@ -155,7 +161,8 @@ stockscraper is used to identify vegan stocks on various exchanges.
         exch-tsv (str "resources/" exch ".tsv")
         full-list (-> (ds/->dataset exch-fil)
                       (ds/rename-columns {"Symbol" :symbol
-                                          "Description" :company}))
+                                          "Description" :company})
+                      (clean-up))
         stocks-list (ds/filter-column is-a-stock :company full-list)
         filtered-stocks (ds-filtered stocks-list)]
     (ds-tsv filtered-stocks exch-tsv)
