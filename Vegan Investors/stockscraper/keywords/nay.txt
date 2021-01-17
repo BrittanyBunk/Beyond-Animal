@@ -73,6 +73,7 @@ restaurant
 testing
 Texas
 truck
+trucks
 trucking
 turbine
 tv
