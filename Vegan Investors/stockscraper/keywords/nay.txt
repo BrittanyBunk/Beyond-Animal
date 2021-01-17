@@ -43,6 +43,7 @@ leather
 life science
 limestone
 livestock
+LNG
 mall
 marble
 meat
