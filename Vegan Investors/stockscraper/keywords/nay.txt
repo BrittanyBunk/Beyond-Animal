@@ -25,6 +25,7 @@ fish
 fisheries
 fishes
 fishing
+gas
 gas station
 gasoline
 gold
