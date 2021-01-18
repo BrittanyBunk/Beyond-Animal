@@ -53,6 +53,7 @@ reclamation
 recycling
 renewable
 rice
+robotics
 seed
 solar
 systems
