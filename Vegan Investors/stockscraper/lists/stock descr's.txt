@@ -1,0 +1,10 @@
+simply wall st	https://simplywall.st/
+sec 	          https://sec.report/Ticker/orgt
+investing.com	  investing.com
+bloomberg	      https://www.bloomberg.com/quote/BYND:US
+marketwatch   	https://www.marketwatch.com/investing/stock/tsla?mod=home-page
+chartmill	      https://www.chartmill.com/stock/quote/bynd
+morningstar	    https://www.morningstar.com/stocks/xnas/bynd/quote
+google	        google.com/finance/quote/TSLA:NASDAQ
+msn	            https://www.msn.com/en-us/money/stockdetails/company/fi-a1tr1h
+bing  	        https://www.bing.com/search?q=GE%20Stock&FORM=FINRQY&tf=U2VydmljZT1GaW5hbmNlQW5zd2VyIFNjZW5hcmlvPVNlY3VyaXR5RGV0YWlsIFBvc2l0aW9uPU5PUCBSYW5raW5nRGF0YT1UcnVlIEZvcmNlUGxhY2U9RmFsc2UgUGFpcnM9dDpTdG9jay5hMXRyMWguR0UucjZkd29yOyB8&hs=cPRSK6KdTXzrwpf%2fOeD%2bNQNIlo%2brFG0psksrLCQIhKo%3d&FORM=FINMKT#quote=0
