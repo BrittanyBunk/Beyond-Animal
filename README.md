@@ -12,3 +12,4 @@ For permissions to edit this repository, please add your request here: https://b
 Guidelines/rules for invitations:
 - create your own folder with the title of either your first and last name, or the name of your project
 - please don't edit other people's' folders/works without their permission (you may download them however)
+- keep it related to the repository's theme
