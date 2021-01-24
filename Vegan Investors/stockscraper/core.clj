@@ -37,7 +37,7 @@ stockscraper is used to identify vegan stocks on various exchanges.
 (def yays
   (kwd-read "resources/yay.txt"))
 (def exchs
-  ["AMEX" "ASX" "NASDAQ" "NYSE" "SGX" "TSX" "TSXV"])
+  ["AMEX" "ASX" "HKEX" "LSE" "NASDAQ" "NYSE" "SGX" "TSX" "TSXV"])
 
 
 ;; get the descriptions from the yahoo finance profiles of a stock
@@ -72,13 +72,22 @@ stockscraper is used to identify vegan stocks on various exchanges.
    (first (html/select parsedtxt
                        [(html/attr-contains :class "Mt(15px) Lh(1.6)")]))))
 
+(defn pull-comp
+  "pulls the company name of the stock from the parsed text"
+  [parsedtxt]
+  (let [txt (first (html/texts (html/select parsedtxt [:h1])))
+        res (cond
+              (nil? txt) "NIL"
+              (= txt "") "THIS - IS UNKNOWN"
+              :else txt)]
+      (s/replace res #".*- " "")))
+
 (defn stock-desc
   "returns stock description when possible or blank string"
   [symb comp]
   (let [txt (fetch-url (mkurl symb))
         title (first (map html/text (html/select txt [:title])))
         lookup? (re-find #"^Symbol Lookup" title)]
-    #_(Thread/sleep 3000)
     (pr symb)
     (if-not lookup?
       (pull-desc txt)
@@ -120,19 +129,28 @@ stockscraper is used to identify vegan stocks on various exchanges.
   (let [ds0 (assoc ds :desc
                    (map stock-desc (ds :symbol) (ds :company)))
         ds1 (ds/filter-column #(not= "" %) :desc ds0)
-        ds2 (assoc ds1 :yay
+        ds2 (ds/assoc ds1 :yay
                    (map #(mk-kwd-v % yays) (ds1 :desc)))
-        ds3 (assoc ds2 :nay
+        ds3 (ds/assoc ds2 :nay
                    (map #(mk-kwd-v % nays) (ds2 :desc)))
-        ds4 (assoc ds3 :yayk
+        ds4 (ds/assoc ds3 :yayk
                    (map count (ds3 :yay)))
-        ds5 (assoc ds4 :nayk
+        ds5 (ds/assoc ds4 :nayk
                    (map count (ds4 :nay)))
-        ds6 (assoc ds5 :may
+        ds6 (ds/assoc ds5 :may
                    (map #(mk-kwd-v % mays) (ds5 :desc)))
-        ds7 (assoc ds6 :mayk
-                   (map count (ds6 :may)))]
-    (ds/sort-by-column :yayk > ds7)))
+        ds7 (ds/assoc ds6 :mayk
+                      (map count (ds6 :may)))
+        ds8 (ds/assoc ds7 :wmay
+                      (map set (ds7 :may)))
+        ds9 (ds/assoc ds8 :wnay
+                      (map set (ds8 :nay)))
+        dsA (ds/assoc ds9 :wyay
+                      (map set (ds8 :yay)))]
+    (->> dsA
+         (ds/sort-by-column :mayk >)
+         (ds/sort-by-column :yayk >)
+         (ds/sort-by-column :nayk <))))
 
 (defn is-a-stock
   "identifies if a stock from company description"
@@ -140,12 +158,20 @@ stockscraper is used to identify vegan stocks on various exchanges.
   (when-not (re-find #"ETF|ETN|Ind|Bond|Proshares" comp)
     true))
 
-(defn ds-tsv
+#_(defn ds-tsv
   "prints tsv file of dataset"
   [ds filname]
   (ds/write-csv!
    (ds/select-columns ds [:symbol :company :yayk :nayk :mayk :yay :nay :may :desc])
    filname))
+
+(defn ds-tsv
+  "prints tsv file of dataset"
+  [ds filname]
+  (ds/write-csv!
+   (ds/select-columns ds [:symbol :company :yayk :nayk :mayk :wyay :wnay :wmay :desc])
+   filname))
+
 
 (defn clean-up
   "removes missing rows from dataset"
@@ -166,7 +192,8 @@ stockscraper is used to identify vegan stocks on various exchanges.
         stocks-list (ds/filter-column is-a-stock :company full-list)
         filtered-stocks (ds-filtered stocks-list)]
     (ds-tsv filtered-stocks exch-tsv)
-    filtered-stocks))
+    filtered-stocks
+    ))
 
 
 ;; html page generation
@@ -206,8 +233,10 @@ stockscraper is used to identify vegan stocks on various exchanges.
                        [:td com]
                        [:td {:style "background-color:lightgreen"} yak]
                        [:td {:style "background-color:lightpink"} nak]
-                       [:td {:style "background-color:lightgrey"} mak]]
-                      [:tr [:td {:colspan 5 :style "text-align:justify"} des]])))]))
+                       [:td {:style "background-color:lightgrey"} mak]
+                       [:td des]]
+                      ;; [:tr [:td {:colspan 5 :style "text-align:justify"} des]]
+                      )))]))
 
 (defn main
   "given an exchange does all processing and outputs htmlpage"
@@ -216,4 +245,49 @@ stockscraper is used to identify vegan stocks on various exchanges.
         rows-from-ds (ds/mapseq-reader exchange-ds)
         htmlpage (exch-html rows-from-ds)]
     (spit (str "resources/" exch ".html") htmlpage)))
+
+
+(def pfm (comp pull-comp fetch-url mkurl))
+(defn otc2exch
+  "writes otc file in exch format"
+  [otc]
+  (let [otcfile (str "resources/" otc ".txt")
+        otcds (ds/->dataset otcfile)
+        altered (ds/assoc otcds "Description"
+                          (map pfm (otcds "Symbol")))]
+    (ds/write-csv! altered otcfile {:separator \tab})
+    ))
+
+(defn tsvein
+  "given an exchange does processing from the tsv files"
+  [exch]
+  (let [ds1 (-> (ds/->dataset (str "resources/" exch ".tsv"))
+                (ds/rename-columns {"symbol" :symbol
+                                    "company" :company
+                                    "yayk" :yayk
+                                    "nayk" :nayk
+                                    "mayk" :mayk
+                                    "yay" :yay
+                                    "nay" :nay
+                                    "may" :may
+                                    "desc" :desc}))
+        ds2 (assoc ds1 :yay
+                   (map #(mk-kwd-v % yays) (ds1 :desc)))
+        ds3 (assoc ds2 :nay
+                   (map #(mk-kwd-v % nays) (ds2 :desc)))
+        ds4 (assoc ds3 :yayk
+                   (map count (ds3 :yay)))
+        ds5 (assoc ds4 :nayk
+                   (map count (ds4 :nay)))
+        ds6 (assoc ds5 :may
+                   (map #(mk-kwd-v % mays) (ds5 :desc)))
+        ds7 (assoc ds6 :mayk
+                   (map count (ds6 :may)))
+        rows-from-ds (ds/mapseq-reader (->> ds7
+                                            (ds/sort-by-column :mayk >)
+                                            (ds/sort-by-column :yayk >)
+                                            (ds/sort-by-column :nayk <)))
+        htmlpage (exch-html rows-from-ds)]
+   (spit (str "resources/" exch "-onerow.html") htmlpage)))
+
 
