@@ -52,7 +52,6 @@ meats
 midstream
 milk
 mouse
-movies
 natural gas
 offshore
 oil
