@@ -1,6 +1,5 @@
 animal
 aquamin
-automotive
 bait
 bottled water
 cancer
