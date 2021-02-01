@@ -3,6 +3,7 @@ alcohol
 almond
 almonds
 Australia
+automotive
 avocados
 bananas
 biopharmaceutical
