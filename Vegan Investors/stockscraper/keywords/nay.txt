@@ -29,6 +29,7 @@ gas
 gas station
 gasoline
 gold
+golf
 grocery
 groundwater
 honey
