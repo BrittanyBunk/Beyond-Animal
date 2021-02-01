@@ -24,7 +24,6 @@ energy
 food
 fuel
 Germany
-golf
 Israel
 lawn
 lead
