@@ -1,7 +1,7 @@
 # Beyond-Animal
 Coding activities for Beyond Animal users
 
-Google Drive: https://drive.google.com/drive/folders/1iH88ZhKtQdEh58_CtVuJf0iX5rIdEY-N?usp=sharing
+Google Drive (comment only - ask me (hawaiifunsun@hotmail.com) for permission to edit): https://drive.google.com/drive/folders/1iH88ZhKtQdEh58_CtVuJf0iX5rIdEY-N?usp=sharing
 
 "Beyond Animal is a digital platform to accelerate the growth of a thriving vegan economy". Located at https://beyondanimal.com/.
 
