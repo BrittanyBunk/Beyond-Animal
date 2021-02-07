@@ -1,5 +1,5 @@
 nay:
-casinos, bars, wells fargo
+casinos, bars, wells fargo, charcoal
 
 may: 
 loans, debt, mortgage, fund, bonds, credit, trust
